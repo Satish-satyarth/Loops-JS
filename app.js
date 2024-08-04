@@ -62,7 +62,7 @@ for (const num of arr) {
 
 const greetings = "Hello world!"
 for (const greet of greetings) {
-    //console.log(`Each char is ${greet}`)
+    // console.log(`Each char is ${greet}`)
 }
 
 // Maps
@@ -77,10 +77,10 @@ map.set('IN', "India")
 // console.log(map);
 
 for (const [key, value] of map) {
-    // console.log(key, ':-', value);
+    console.log(key, ':-', value);
 }
 
- // const myObject = {
+//  const myObject = {      :- Objects are not iteratable on for of loop
 //     game1: 'NFS',
 //     game2: 'Spiderman'
 // }
@@ -178,6 +178,8 @@ const myNumers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 // console.log(values);
 
+// -------------------------------------- Filter -----------------------------------------
+
 const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 // const newNums = myNums.filter( (num) => {
@@ -194,8 +196,6 @@ const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 // console.log(newNums);
 
-
-//  -------------------------------------- Filter -----------------------------------------
 const books = [
     { title: 'Book One', genre: 'Fiction', publish: 1981, edition: 2004 },
     { title: 'Book Two', genre: 'Non-Fiction', publish: 1992, edition: 2008 },
@@ -213,4 +213,58 @@ const books = [
   userBooks = books.filter( (bk) => { 
     return bk.publish >= 1995 && bk.genre === "History"
 })
-  console.log(userBooks);
+//   console.log(userBooks);
+
+//   const myNumers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+// const newNums = myNumers.map( (num) => { return num + 10})
+
+const newNums = myNumers
+                .map((num) => num * 10 )
+                .map( (num) => num + 1)
+                .filter( (num) => num >= 40)
+
+// console.log(newNums);
+
+
+const newNum = [10,20,30,40,]
+
+// let MyTotal = newNum.reduce(function (acc, currVal) {
+//     return acc+currVal
+// }, 0)
+// console.log(MyTotal)
+
+// let total = newNum.reduce( (accm , currVal) => {
+//     return accm+currVal
+// }, 0)
+// console.log(total);
+
+
+// let total = newNum.reduce( (acc, currVal) => acc+currVal ,0)
+// console.log(total);
+
+let Cartprice = [
+    {
+        course : "python",
+        price : 1999
+    },
+    {
+        course : "Java",
+        price : 3999
+    },
+    {
+        course : "Dta science",
+        price : 4999
+    },
+    {
+        course : "Web dev",
+        price : 5999
+    },
+    {
+        course : "Android dev",
+        price : 11999
+    },
+
+]
+let cart_total = Cartprice.reduce( (acc, item) => acc + item.price , 0)
+// console.log(cart_total);
